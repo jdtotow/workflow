@@ -1,4 +1,4 @@
-package main
+package jf
 
 import (
 	"bytes"
@@ -9,7 +9,7 @@ import (
 	stomp "github.com/go-stomp/stomp/v3"
 )
 
-func NewHttpSender(name, url, body, requestType string, headers, params map[string]string, timeout int) (*http.Response, error) {
+func NewHttpSender(url, body, requestType string, headers, params map[string]string, timeout int) (*http.Response, error) {
 	_timeout := 5
 	if timeout > 0 && timeout < 1000 {
 		_timeout = timeout
